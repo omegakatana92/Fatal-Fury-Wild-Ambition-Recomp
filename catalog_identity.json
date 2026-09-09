@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Fatal Fury - Wild Ambition",
+    "id": "SLUS-01001",
+    "boot_exe": "SLUS_010.01"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "",
+    "players": 2
+  },
+  "rom_identity": {
+    "cue_name": "Fatal Fury - Wild Ambition (USA).cue",
+    "bin_name": "Fatal Fury - Wild Ambition (USA).bin",
+    "track_counts": [
+      1
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 693830592,
+      "md5": "6dbb08bcc1f40ae130c8705e4919541b",
+      "sha1": "2a92c10686454526b06c5bbbb924b5e331952485",
+      "crc32": "70c88f0c"
+    },
+    "disc_fp": "0ddb7e954f355528a9040c1f26044b73893ac855adba7a82c92ecd6b771bad29"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x80016BF0",
+    "text_size": "0x00096000",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 922,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [
+    "cue has only 1 TRACK \u2014 Track-01-only dumps fail multi-track netplay/catalog gates; prefer a full Redump cue."
+  ],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

@@ -1,0 +1,54 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Fatal Fury - Wild Ambition"
+id = "SLUS-01001"
+players = 2
+exe = "disc/SLUS_010.01"
+disc = "disc/game.cue"
+load_address = "0x80010000"
+entry_pc = "0x80016BF0"
+text_size = "0x00096000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Fatal Fury - Wild Ambition (USA).bin"
+cue_name = "Fatal Fury - Wild Ambition (USA).cue"
+boot_exe = "SLUS_010.01"
+known_sizes = [693830592]
+known_md5 = [
+  "6dbb08bcc1f40ae130c8705e4919541b",
+]
+known_sha1 = [
+  "2a92c10686454526b06c5bbbb924b5e331952485",
+]
+known_crc32 = [
+  "70c88f0c",
+]
+
+[recompiler]
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+window_title = "Fatal Fury - Wild Ambition Recompiled"
+memcard_dir = "saves"
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+multitap_analog = true
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "0ddb7e954f355528a9040c1f26044b73893ac855adba7a82c92ecd6b771bad29"
